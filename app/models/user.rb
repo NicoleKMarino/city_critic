@@ -1,7 +1,10 @@
+
 class User < ApplicationRecord
-  validates :username, presence: true, uniqueness: true, if: "uid.nil?", on: :create
-  validates :email, presence: true, uniqueness: true, if: "uid.nil?", on: :create
-  validates :email, email: { strict_mode: true }, if: "uid.nil?", on: :create
+  has_secure_password
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :city, presence: true, uniqueness: true
+
 
   def date_registered
     created_at.strftime("%m/%d/%Y")

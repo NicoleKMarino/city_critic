@@ -14,4 +14,25 @@
  *= require_self
 
  */
- @import "bootstrap-sprockets";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.home-banner {
+  opacity: .9;
+  margin-top: 10%;
+}
+
+body {
+  background: url("https://hd.unsplash.com/photo-1467521335787-2f0fc0f0e9a0") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+  .post-image{
+   width: 500px;
+   height: 500px;
+ }

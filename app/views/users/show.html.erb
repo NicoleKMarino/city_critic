@@ -1,0 +1,28 @@
+<div class="page-content">
+
+<h2>Profile for <%= current_user.username %></h2>
+  <div class="well table-responsive col-md-6">
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+      </tr>
+      <tr>
+        <th>E-mail</th>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <th>Date Registered</th>
+        <td><%= current_user.date_registered %></td>
+      </tr>
+      <tr>
+        <th>City</th>
+          <td>
+            <%= current_user.city %>,
+            <%= current_user.state %>
+          </td>
+      </tr>
+    </table>
+    <h3> Reviews: </h3>
+</div>
+</div>

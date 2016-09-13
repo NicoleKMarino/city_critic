@@ -13,6 +13,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+gem 'bcrypt', '~> 3.1.7'
+
 
 gem 'unicorn'
 gem 'figaro'
@@ -22,6 +24,7 @@ gem 'database_cleaner'
 gem 'factory_girl_rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'yelp', require: 'yelp'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
