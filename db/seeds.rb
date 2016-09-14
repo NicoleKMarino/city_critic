@@ -3,7 +3,7 @@ class Seed
   def self.start
    create_states
    create_user
-  #  create_cities
+   create_cities
   end
 
 
@@ -79,6 +79,9 @@ class Seed
         )
       end
     end
+
+    def self.create_cities
+    end 
 
   # def self.create_cities
   # end

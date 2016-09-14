@@ -1,5 +1,5 @@
 require 'yelp'
-class TumblrService
+class YelpService
 
   def initialize(current_user)
 
@@ -11,4 +11,4 @@ class TumblrService
 
   end
 
-end 
+end
