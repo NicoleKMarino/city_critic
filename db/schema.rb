@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20160912205603) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "states_id"
-    t.index ["states_id"], name: "index_cities_on_states_id", using: :btree
+    t.integer  "state_id"
+    t.index ["state_id"], name: "index_cities_on_state_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20160912205603) do
     t.boolean  "current_resident"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "users_id"
-    t.integer  "cities_id"
-    t.index ["cities_id"], name: "index_comments_on_cities_id", using: :btree
-    t.index ["users_id"], name: "index_comments_on_users_id", using: :btree
+    t.integer  "user_id"
+    t.integer  "city_id"
+    t.index ["city_id"], name: "index_comments_on_city_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "states", force: :cascade do |t|
