@@ -1,0 +1,32 @@
+<div class="page-content">
+  <div class="container">
+    <div class="jumbotron text-centered home-banner">
+      <h4> Neighborhoods in <%=@city.name%></h4>
+<br></br>
+<%if @neighborhoods != nil %>
+<% @neighborhoods.each do |neighborhood|%>
+<%= neighborhood["name"] %>
+<%=link_to "Neighborhood Info", neighborhood["url"] %>
+<br></br>
+<%end%>
+<%else %>
+<p> There are no documented neighborshoods for this area</p>
+<%end %>
+<h4> Top Resturaunts in <%=@city.name%></h4>
+</div>
+<% @resturaunts.each do |resturaunt| %>
+<div class="thumbnail col-xs-3 resturaunt-list">
+<img src="<%=resturaunt.image_url %>"></img>
+<h4><%= resturaunt.name %></h4>
+<img src="<%=resturaunt.rating_img_url_small%>"></img>
+<%= resturaunt.display_phone %>
+<br></br>
+<% resturaunt.location.display_address.each do |address|%>
+<%= address %>
+<%end %>
+<br></br>
+</div>
+<%end %>
+</div>
+</div>
+</div>

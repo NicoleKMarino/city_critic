@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'database_cleaner'
 gem 'crack'
 gem 'unicorn'
 gem 'figaro'
@@ -49,6 +49,8 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rspec-rails'
   gem 'simplecov', require: false
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development, :test do

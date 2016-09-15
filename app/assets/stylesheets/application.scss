@@ -24,6 +24,11 @@
   margin-top: 10%;
 }
 
+.col-centered {
+  float: none;
+  margin: 0 auto;
+  }
+
 body {
   background: url("https://hd.unsplash.com/photo-1467521335787-2f0fc0f0e9a0") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -36,3 +41,30 @@ body {
    width: 500px;
    height: 500px;
  }
+
+ .resturaunt-list{
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+  padding-top: 30px;
+  margin: 0 0 2.5% 2.5%;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 2rem;
+  vertical-align: top;
+  box-shadow: 0 0 5px #ddd;
+  box-sizing: border-box;
+  height: 350px;
+  width:350px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+  .well {
+    opacity: 0.95;
+    background-color: rgba(255, 255, 255, 0.80);
+    border-color: #cac9cb;
+  }

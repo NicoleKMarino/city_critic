@@ -29,6 +29,7 @@ class SessionsController < ApplicationController
   def authorize_user
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       flash.now[:danger] = "Login information incorrect."
       render :new

@@ -1,8 +1,7 @@
-<div class="well table-responsive col-md-6">
-<ul>
+<div class="page-content">
 <% @states.each do |state| %>
-<li>
-<%= state.name %>
-</li>
+<div class="thumbnail col-xs-3 resturaunt-list">
+<%= link_to "#{state.name}", state_path(state.id) %>
+</div>
 <%end %>
 </div>
