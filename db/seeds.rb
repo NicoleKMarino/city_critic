@@ -4,6 +4,28 @@ class Seed
    create_states
    create_user
    create_cities
+   create_comments
+  end
+
+  def self.create_comments
+    City.all.each do |city|
+    city.comments.create!(
+    pros: "Good public transportation",
+    cons: "lots of gray buildings",
+    stars: 2,
+    current_resident: false,
+    user_id: User.first.id,
+    city_id: 10
+    )
+    city.comments.create!(
+    pros: "Nice people",
+    cons: "not nice looking",
+    stars: 4,
+    current_resident: false,
+    user_id: User.first.id,
+    city_id: 10
+    )
+    end
   end
 
 

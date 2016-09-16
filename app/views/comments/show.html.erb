@@ -1,0 +1,26 @@
+<div class="page-content">
+
+  <div class="well table-responsive col-md-6">
+    <h2>Review for <%= @comment.city.name %></h2>
+    <table class="table">
+      <tr>
+        <th>User</th>
+        <td><%=link_to "#{@comment.user.username}",user_path(@comment.user_id) %></td>
+      </tr>
+      <tr>
+        <th>Pros</th>
+        <td><%= @comment.pros %></td>
+      </tr>
+      <tr>
+        <th>Cons</th>
+        <td><%= @comment.cons %></td>
+      </tr>
+      <tr>
+        <th>Stars</th>
+          <td>
+            <%= @comment.stars %>
+          </td>
+      </tr>
+    </table>
+</div>
+</div>

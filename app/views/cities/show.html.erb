@@ -1,32 +1,47 @@
-<div class="page-content">
-  <div class="container">
-    <div class="jumbotron text-centered home-banner">
+<div class="city-view container-fluid">
+  <div class="row">
+    <div id="neighborhoods" class="thumbnail col-xs-offset-1 text-centered col-xs-3">
       <h4> Neighborhoods in <%=@city.name%></h4>
-<br></br>
-<%if @neighborhoods != nil %>
-<% @neighborhoods.each do |neighborhood|%>
-<%= neighborhood["name"] %>
-<%=link_to "Neighborhood Info", neighborhood["url"] %>
-<br></br>
-<%end%>
-<%else %>
-<p> There are no documented neighborshoods for this area</p>
-<%end %>
-<h4> Top Resturaunts in <%=@city.name%></h4>
-</div>
-<% @resturaunts.each do |resturaunt| %>
-<div class="thumbnail col-xs-3 resturaunt-list">
-<img src="<%=resturaunt.image_url %>"></img>
-<h4><%= resturaunt.name %></h4>
-<img src="<%=resturaunt.rating_img_url_small%>"></img>
-<%= resturaunt.display_phone %>
-<br></br>
-<% resturaunt.location.display_address.each do |address|%>
-<%= address %>
-<%end %>
-<br></br>
-</div>
-<%end %>
-</div>
-</div>
+      <br></br>
+      <%if @neighborhoods != nil %>
+      <% @neighborhoods.each do |neighborhood|%>
+      <%= neighborhood["name"] %>
+      <%=link_to "Neighborhood Info", neighborhood["url"] %>
+      <br></br>
+      <%end%>
+      <%else %>
+      <p> There are no documented neighborshoods for this area</p>
+      <%end %>
+    </div>
+    <div class="thumbnail col-xs-8 pull-center">
+      <%= link_to "Critique #{@city.name}", new_comment_path(name: @city.name), class: 'btn btn-lg btn-cities pull-right' %>
+      <%if @city.comments.nil? %>
+      <p>there are no reviews for this city</p>
+      <%else %>
+      <%@city.comments.each do |comment| %>
+      <h4><%= comment.user.username %></h4>
+      <ul>
+      <li>Pros: <%= comment.pros %></li>
+      <li>Cons: <%= comment.cons %></li>
+      </ul>
+      <%end %>
+      <%end %>
+    </div>
+    <div class="thumbnail col-xs-8 pull-left">
+      <h3> Top Resturaunts in <%=@city.name%></h3>
+    </div>
+    <% @resturaunts.each do |resturaunt| %>
+    <div class="thumbnail col-xs-8 col-md-4 resturaunt-list">
+    <img src="<%=resturaunt.image_url %>"></img>
+    <h4><%= resturaunt.name %></h4>
+    <img src="<%=resturaunt.rating_img_url_small%>"></img>
+    <%= resturaunt.display_phone %>
+    <br></br>
+    <% resturaunt.location.display_address.each do |address|%>
+    <%= address %>
+    <%end %>
+    <br></br>
+    </div>
+    <%end %>
+  </div>
 </div>
