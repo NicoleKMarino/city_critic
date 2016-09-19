@@ -5,11 +5,10 @@
     <h2>Write Your Review</h2>
     <div class="well">
       <%=form_for @comment, :url => new_comment_path do |f| %>
-    <%= f.label :stars %>
-    <br>
-    <%= f.text_field :stars %>
-    <br></br>
-  </p>
+      <strong>Stars:</strong>
+      <%= f.hidden_field :stars %>
+      <ul id="comment_stars_display" class="c-rating"></ul>
+      <br></br>
     <%= f.label :pros %>
     <br>
     <%= f.text_area :pros, :cols => "35", :rows => "5" %>

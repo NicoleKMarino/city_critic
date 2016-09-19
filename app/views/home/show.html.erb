@@ -4,12 +4,12 @@
       <h4>Making the move..?</h4>
       <h1>City Critic</h1>
       <p>Helping millions of users find their next destination.
-      From sea to shining see, we help you figure out the ups and downs of each potential city. </p>
+      All over America, we help you figure out the ups and downs of each potential city. </p>
       <p><strong>Know where you're going.</strong></p>
       <BR>
       <p>
       <%= link_to 'All Cities', states_path, class: 'btn btn-lg btn-cities pull-center' %>
-      <%= link_to 'Review My City', city_path(@user_city), class: 'btn btn-lg btn-city pull-center' %>
+      <%= link_to 'Review My City', city_path(@user_city), class: 'btn btn-lg btn-city pull-center' unless current_user.nil? %>
       </p>
     </center>
   </div>

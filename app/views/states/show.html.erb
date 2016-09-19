@@ -1,6 +1,9 @@
-<div class="well table-responsive col-md-6">
+
+<center>
 <%@cities.each do |city| %>
-<%= link_to "#{city.name}", city_path(city.id) %>
-<br>
+  <div class="well col-xs-3 resturaunt-list">
+  <%= link_to "#{city.name}", city_path(city.id) %>
+  <br>
+  </div>
 <%end %>
-</div>
+</center>

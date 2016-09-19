@@ -1,7 +1,7 @@
-<div class="page-content">
 <% @states.each do |state| %>
 <div class="thumbnail col-xs-3 resturaunt-list">
 <%= link_to "#{state.name}", state_path(state.id) %>
+<br></br>
+<%= image_tag(state.image_url, class: "state-image") %>
 </div>
 <%end %>
-</div>

@@ -7,7 +7,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :city, presence: true
   validates :state, presence: true
-  has_many :comments 
+  has_many :comments
+  ratyrate_rater
 
 
   def date_registered

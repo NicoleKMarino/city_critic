@@ -1,0 +1,5 @@
+<ul class="c-rating read-only">
+  <% (1..5).to_a.each do |index|%>
+    <li class="c-rating__item <%= rating >= index ? "is-active" : nil%>"></li>
+  <% end %>
+</ul>

@@ -12,7 +12,7 @@ class YelpService
 
   def get_resturaunts(city)
     params = { term: 'food',
-           limit: 12}
+           limit: 10}
     response = @client.search(city, params)
     response.businesses
   end

@@ -24,12 +24,16 @@
       </tr>
     </table>
     <h3> Reviews: </h3>
-    <br>
-    <% current_user.comments.each do |review| %>
-    <h4><%=link_to "#{review.city.name}", comment_path(review.id) %></h4>
-    pros: <%=review.pros  %>
-    cons:</b> <%=review.cons  %>
-    <br></br>
-    <%end%>
 </div>
 </div>
+
+<br>
+<% current_user.comments.each do |comment| %>
+<div class="well col-xs-8 pull-left">
+<h4><%=link_to "#{comment.city.name}", comment_path(comment.id) %></h4>
+<%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
+<h4>Pros:</h4> <%=comment.pros  %>
+<h4>Cons:</h4> <%=comment.cons  %>
+<br></br>
+</div>
+<%end%>

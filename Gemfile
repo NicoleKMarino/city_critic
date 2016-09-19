@@ -27,6 +27,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'yelp', require: 'yelp'
 gem 'rentjuicer'
 gem 'faraday', '~>0.9.2'
+gem 'ratyrate'
+gem "omniauth-yelp"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
