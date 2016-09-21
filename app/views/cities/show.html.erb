@@ -25,13 +25,16 @@
       <%else %>
       <%= link_to "Critique #{@city.name}", new_comment_path(name: @city.name), class: 'btn btn-lg btn-cities pull-right' %>
       <%end %>
-      <h3> Reviews:</h3>
+      <h3> Average Review:</h3>
+      <%= render partial: 'shared/stars_read_only', locals: {rating: @city.average_review} %>
+      <br>
+      <h4> Customer Reviews:</h4>
       <br>
       <%if @city.comments.nil? %>
       <p>there are no reviews for this city</p>
       <%else %>
       <%@city.comments.each do |comment| %>
-      <h4><%= comment.user.username %></h4>
+      <%= link_to comment.user.username, user_path(comment.user.id) %>
       <ul>
       <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
       <li>Pros: <%= comment.pros %></li>
