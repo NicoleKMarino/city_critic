@@ -15,20 +15,21 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'database_cleaner'
-gem 'crack'
 gem 'unicorn'
 gem 'figaro'
 gem 'capybara'
+gem "therubyracer"
 gem 'launchy'
-gem 'database_cleaner'
 gem 'factory_girl_rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'yelp', require: 'yelp'
 gem 'rentjuicer'
 gem 'faraday', '~>0.9.2'
-gem 'ratyrate'
-gem "omniauth-yelp"
+gem 'crack'
+gem 'omniauth-facebook'
+
+# gem "omniauth-google-oauth2"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

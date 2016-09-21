@@ -6,8 +6,7 @@ def create_user
     username: "nicole",
     email: "test@gmail,com",
     password: "password",
-    first_name: "Nicole",
-    last_name: "Marino",
+    full_name: "Nicole Marino",
     city: "Denver",
     state: "CO"  )
 end

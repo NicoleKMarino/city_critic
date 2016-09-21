@@ -1,11 +1,11 @@
 <div class="page-content">
 
-<h2>Profile for <%= current_user.username %></h2>
   <div class="well table-responsive col-md-6">
     <table class="table">
+      <h2>Profile for <%= current_user.username %></h2>
       <tr>
         <th>Name</th>
-        <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+        <td><%= current_user.full_name %></td>
       </tr>
       <tr>
         <th>E-mail</th>
