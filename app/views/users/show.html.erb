@@ -17,24 +17,24 @@
       </tr>
       <tr>
         <th>City</th>
-          <td>
-            <%= current_user.city %>,
-            <%= current_user.state %>
-          </td>
+        <td>
+          <%= current_user.city %>,
+          <%= current_user.state %>
+        </td>
       </tr>
     </table>
     <h3>Reviews:</h3>
-</div>
+  </div>
 </div>
 </div>
 
 <br>
 <% current_user.comments.each do |comment| %>
 <div class="well col-xs-8 pull-left">
-<h4><%=link_to "#{comment.city.name}", comment_path(comment.id) %></h4>
-<%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
-<h4>Pros:</h4> <%=comment.pros  %>
-<h4>Cons:</h4> <%=comment.cons  %>
-<br></br>
+  <h4><%=link_to "#{comment.city.name}", comment_path(comment.id) %></h4>
+  <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
+  <h4>Pros:</h4> <%=comment.pros  %>
+  <h4>Cons:</h4> <%=comment.cons  %>
+  <br></br>
 </div>
 <%end%>

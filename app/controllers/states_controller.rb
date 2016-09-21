@@ -1,4 +1,7 @@
 class StatesController < ApplicationController
+  caches_action :index
+  caches_action :index, :layout => false
+
 
   def index
     @states = State.all

@@ -25,6 +25,14 @@ class Seed
     user_id: User.first.id,
     city_id: 10
     )
+    city.comments.create!(
+    pros: "Lots",
+    cons: "None",
+    stars: 5,
+    current_resident: false,
+    user_id: User.first.id,
+    city_id: 10
+    )
     end
   end
 

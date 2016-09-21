@@ -34,26 +34,27 @@
       <p>there are no reviews for this city</p>
       <%else %>
       <%@city.comments.each do |comment| %>
-      <%= link_to comment.user.username, user_path(comment.user.id) %>
       <ul>
-      <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
-      <li>Pros: <%= comment.pros %></li>
-      <li>Cons: <%= comment.cons %></li>
+        <h4><%= link_to comment.user.username, user_path(comment.user.id) %></h4>
+        <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
+        <li>Pros: <%= comment.pros %></li>
+        <li>Cons: <%= comment.cons %></li>
       </ul>
+      <br>
       <%end %>
       <%end %>
     </div>
-      <% @resturaunts.each do |resturaunt| %>
-      <div class="thumbnail col-xs-2 resturaunt-list">
+    <% @resturaunts.each do |resturaunt| %>
+    <div class="thumbnail col-xs-2 resturaunt-list">
       <img src="<%=resturaunt.image_url %>"></img>
-      <h4><%= resturaunt.name %></h4>
+      <h4><%= link_to resturaunt.name, resturaunt.url %></h4>
       <img src="<%=resturaunt.rating_img_url_small%>"></img>
       <%= resturaunt.display_phone %>
       <br></br>
       <% resturaunt.location.display_address.each do |address|%>
-    <%= address %>
-    <%end %>
-    <br></br>
+      <%= address %>
+      <%end %>
+      <br></br>
     </div>
     <%end %>
   </div>

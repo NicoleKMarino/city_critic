@@ -16,8 +16,8 @@
       </tr>
       <tr>
         <th>Stars</th>
-          <td id="stars">
-            <!-- <%= @comment.stars %> -->
+        <td>
+            <%= render partial: 'shared/stars_read_only', locals: {rating: @comment.stars} %>
           </td>
       </tr>
     </table>
