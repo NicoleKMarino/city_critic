@@ -1,0 +1,9 @@
+<% @states.each do |state| %>
+<% cache state do %>
+<div class="thumbnail col-xs-3 resturaunt-list">
+<%= link_to "#{state.name}", state_path(state) %>
+<br></br>
+<%= image_tag(state.image_url, class: "state-image") %>
+</div>
+<%end %>
+<%end %>

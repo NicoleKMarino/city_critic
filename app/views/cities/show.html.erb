@@ -1,0 +1,60 @@
+<div class="header-row text-center">
+  <h3> Top Resturaunts & Neighborhoods in <%=@city.name%></h3>
+</div>
+<div class="city-view container-fluid">
+  <div class="row">
+    <div id="neighborhoods" class="thumbnail col-xs-offset-1 text-centered col-xs-3">
+      <h4> Neighborhoods in <%=@city.name%></h4>
+      <br></br>
+      <%if @neighborhoods != nil %>
+      <% @neighborhoods.each do |neighborhood|%>
+      <%if neighborhood.class == Array %>
+      <%else %>
+      <%=link_to neighborhood["name"], neighborhood["url"], class: 'pull-center'%>
+      <br></br>
+      <%end %>
+      <%end%>
+      <%else %>
+      <p> There are no documented neighborshoods for this area</p>
+      <%end %>
+    </div>
+    <div class="thumbnail col-xs-8 pull-center">
+      <%if current_user.nil? %>
+      <%= link_to "Login to Critique #{@city.name}", login_path, class: 'btn btn-lg btn-cities pull-right' %>
+      <%else %>
+      <%= link_to "Critique #{@city.name}", new_comment_path(name: @city.name), class: 'btn btn-lg btn-cities pull-right' %>
+      <%end %>
+      <h3> Average Review:</h3>
+      <%= render partial: 'shared/stars_read_only', locals: {rating: @city.average_review} %>
+      <br>
+      <h4> Customer Reviews:</h4>
+      <br>
+      <%if @city.comments.nil? %>
+      <p>there are no reviews for this city</p>
+      <%else %>
+      <%@city.comments.each do |comment| %>
+      <ul>
+        <h4><%= link_to comment.user.username, user_path(comment.user.id) %></h4>
+        <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} unless comment.stars == 0%>
+        <li>Pros: <%= comment.pros %></li>
+        <li>Cons: <%= comment.cons %></li>
+      </ul>
+      <br>
+      <%end %>
+      <%end %>
+    </div>
+    <% @resturaunts.each do |resturaunt| %>
+    <div class="thumbnail col-xs-2 resturaunt-list">
+      <img src="<%=resturaunt.image_url %>"></img>
+      <h4><%= link_to resturaunt.name, resturaunt.url %></h4>
+      <img src="<%=resturaunt.rating_img_url_small%>"></img>
+      <%= resturaunt.display_phone %>
+      <br></br>
+      <% resturaunt.location.display_address.each do |address|%>
+      <%= address %>
+      <%end %>
+      <br></br>
+    </div>
+    <%end %>
+  </div>
+</div>

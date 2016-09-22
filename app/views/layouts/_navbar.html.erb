@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+    </button>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+    <a class="navbar-brand" href="/">CityCritic</a>
+        <li>
+          <% if current_user.nil? %>
+            <%= link_to "Create An Account", new_user_path %>
+          <% else %>
+            <%= link_to "Logged in as '#{current_user.username}'", user_path(current_user.id) %>
+          <% end %>
+        </li>
+          <% if current_user.nil? %>
+          <%= link_to 'Login', login_path, class: 'btn btn-sm btn-nav2 pull-right' %>
+          <% else %>
+          <%= link_to 'Logout', logout_path, class: 'btn btn-sm btn-nav2 pull-right', method: :delete %>
+          <% end %>
+        <%= link_to 'All Cities', states_path, class: 'btn btn-sm btn-nav pull-right' %>
+      </ul>
+    </div>
+  </nav>

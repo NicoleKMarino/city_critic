@@ -1,0 +1,8 @@
+<div class="well col-xs-3 resturaunt-list col-centered">
+<%@cities.each do |city| %>
+  <%= link_to "#{city.name}", city_path(city.name) %>
+  <br>
+<%end %>
+<br>
+<%= link_to 'Back to States', states_path, class: 'btn btn-lg btn-states pull-right' %>
+</div>

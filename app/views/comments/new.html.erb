@@ -1,0 +1,27 @@
+<div class='page-content'>
+  <center>
+</center>
+  <div class="well col-md-4 col-md-offset-4 pull-center">
+    <h2>Write Your Review</h2>
+    <div class="well">
+      <%=form_for @comment, :url => new_comment_path do |f| %>
+      <strong>Stars:</strong>
+      <%= f.hidden_field :stars %>
+      <ul id="comment_stars_display" class="c-rating"></ul>
+      <br></br>
+    <%= f.label :pros %>
+    <br>
+    <%= f.text_area :pros, :cols => "35", :rows => "5" %>
+    <br></br>
+    <%= f.label :cons %>
+    <br>
+    <%= f.text_area :cons, :cols => "35", :rows => "5" %>
+    <br></br>
+  <center>
+    <br></br>
+    <%= f.submit 'Critique', :class => 'btn btn-primary' %>
+  </center>
+  <% end %>
+</div>
+  </div>
+</div>

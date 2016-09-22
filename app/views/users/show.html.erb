@@ -1,0 +1,40 @@
+<div class="page-content">
+
+  <div class="well table-responsive col-md-6">
+    <table class="table">
+      <h2>Profile for <%= current_user.username %></h2>
+      <tr>
+        <th>Name</th>
+        <td><%= current_user.full_name %></td>
+      </tr>
+      <tr>
+        <th>E-mail</th>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <th>Date Registered</th>
+        <td><%= current_user.date_registered %></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>
+          <%= current_user.city %>,
+          <%= current_user.state %>
+        </td>
+      </tr>
+    </table>
+    <h3>Reviews:</h3>
+  </div>
+</div>
+</div>
+
+<br>
+<% current_user.comments.each do |comment| %>
+<div class="well col-xs-8 pull-left">
+  <h4><%=link_to "#{comment.city.name}", comment_path(comment.id) %></h4>
+  <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
+  <h4>Pros:</h4> <%=comment.pros  %>
+  <h4>Cons:</h4> <%=comment.cons  %>
+  <br></br>
+</div>
+<%end%>

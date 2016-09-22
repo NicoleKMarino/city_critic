@@ -12,6 +12,127 @@
  *
  *= require_tree .
  *= require_self
-
  */
- @import "bootstrap-sprockets";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'five-star-rating/css/rating.min.css';
+
+.c-rating.read-only li.c-rating__item{
+  pointer-events:none;
+  cursor: auto;
+}
+
+.state-image{
+  width: 300px;
+  height: 200px;}
+
+.city-view{
+  margin-top: 10%;
+}
+
+.home-banner {
+  opacity: .9;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+p{
+  font-family: "Tahoma", Geneva, sans-serif;
+}
+
+h2{
+  font-family: "Tahoma", Geneva, sans-serif;
+}
+h4{
+  font-family: "Tahoma", Geneva, sans-serif;
+}
+
+
+h3{
+  font-family: "Tahoma", Geneva, sans-serif;
+}
+
+body {
+  background: url("https://hd.unsplash.com/photo-1467521335787-2f0fc0f0e9a0") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.post-image{
+   width: 500px;
+   height: 500px;
+ }
+
+ .header-row{
+   padding-top: 5px;
+   padding-bottom: 10px;
+   background-color: rgba(255, 255, 255, 0.80);
+   border-color: #cac9cb;
+   height: 60px;
+ }
+
+.resturaunt-list{
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+  padding-top: 30px;
+  margin: 0 2.5% 0 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 2rem;
+  vertical-align: top;
+  box-shadow: 0 0 5px #ddd;
+  box-sizing: border-box;
+  height: 350px;
+  width:350px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+a {
+  color: #6a0027;
+}
+h2 {
+  color: #6a0027;
+}
+
+h3 {
+  color: #6a0027;
+}
+
+.col-centered{
+  margin-right: 500px;
+    margin-left: 500px;
+}
+
+.well {
+  opacity: 0.95;
+  background-color: rgba(255, 255, 255, 0.80);
+  border-color: #cac9cb;
+}
+
+#neighborhoods{
+  margin: 0 2.5% 0 2.5%;
+  text-align: center;
+}
+
+
+.btn-states {
+  background-color: #FFD700;
+  color: black;
+  margin-right: 80px
+}
+
+.btn-states:hover {
+  background-color: #077e94;
+  color: #FFF;
+}

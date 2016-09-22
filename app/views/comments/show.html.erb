@@ -1,0 +1,25 @@
+<div class="page-content comment show">
+  <div class="well table-responsive col-md-6">
+    <h2>Review for <%= @comment.city.name %></h2>
+    <table class="table">
+      <tr>
+        <th>User</th>
+        <td><%=link_to "#{@comment.user.username}",user_path(@comment.user_id) %></td>
+      </tr>
+      <tr>
+        <th>Pros</th>
+        <td><%= @comment.pros %></td>
+      </tr>
+      <tr>
+        <th>Cons</th>
+        <td><%= @comment.cons %></td>
+      </tr>
+      <tr>
+        <th>Stars</th>
+        <td>
+            <%= render partial: 'shared/stars_read_only', locals: {rating: @comment.stars} %>
+          </td>
+      </tr>
+    </table>
+</div>
+</div>

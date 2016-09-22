@@ -1,0 +1,13 @@
+<div class="well">
+  <%= form_for(target, url: path) do |f|  %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br></br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  <center>
+    <br></br>
+    <%= f.submit button, class: "center_button btn btn-#{btn_class}"%>
+  </center>
+  <% end %>
+</div>
