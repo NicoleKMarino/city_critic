@@ -5,13 +5,30 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
-require 'vcr'
-require 'webmock'
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/vcr_cassettes"
-  config.hook_into :webmock
+
+def setup_for_oauth
+  Capybara.app = CityCritic::Application
+  stub_omniauth
 end
+
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+    provider: 'facebook',
+    uid: "1234",
+    extra: {
+      raw_info: {
+        screen_name: "facebook_login",
+      }
+    },
+    credentials: {
+      token: "token",
+      secret: "secret_token"
+    }
+  })
+end
+
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 def process_local_user
   if @user && @user.authenticate(params[:session][:password])
     session[:user_id] = @user.id
-    redirect_to root_path
+    redirect_to user_path(@user.id)
   else
     flash.now[:danger] = "Login information incorrect."
     render :new

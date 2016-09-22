@@ -10,8 +10,7 @@
       <% @neighborhoods.each do |neighborhood|%>
       <%if neighborhood.class == Array %>
       <%else %>
-      <%=neighborhood["name"]%>
-      <%=link_to "Neighborhood Info", neighborhood["url"]%>
+      <%=link_to neighborhood["name"], neighborhood["url"], class: 'pull-center'%>
       <br></br>
       <%end %>
       <%end%>
@@ -36,7 +35,7 @@
       <%@city.comments.each do |comment| %>
       <ul>
         <h4><%= link_to comment.user.username, user_path(comment.user.id) %></h4>
-        <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} %>
+        <%= render partial: 'shared/stars_read_only', locals: {rating: comment.stars} unless comment.stars == 0%>
         <li>Pros: <%= comment.pros %></li>
         <li>Cons: <%= comment.cons %></li>
       </ul>

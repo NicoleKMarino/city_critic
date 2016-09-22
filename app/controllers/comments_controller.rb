@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     comment_hash[:stars] = comment_params[:stars].to_i
     @comment = Comment.create(comment_hash)
     if @comment.save
-      redirect_to city_path(@city)
+      redirect_to city_path(@city.name)
     else
       flash[:error] = 'Please fill in all fields.'
       render :new

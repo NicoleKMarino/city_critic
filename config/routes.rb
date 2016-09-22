@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get '/login',                     to: 'sessions#new'
   post '/login',                    to: 'sessions#create'
   delete '/logout',                 to: 'sessions#destroy'
-  resources :states, only: [:index, :show]
-  resources :cities, only: [:show]
+  resources :states,  only: [:index,:show]
+  get 'cities/:name',               to: 'cities#show', as: "city_path"
   resources :users,  only: [:new, :create, :edit, :update, :show]
   resources :comments,  only: [:edit, :show, :update]
   get '/comment/new/:name', to: 'comments#new', as: "new_comment"
