@@ -15,4 +15,4 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-//= require five-star-rating.min
+//= require rating.min.js

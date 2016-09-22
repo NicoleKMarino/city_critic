@@ -16,7 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'five-star-rating/css/rating.min.css';
+@import 'rating.min.css';
 
 .c-rating.read-only li.c-rating__item{
   pointer-events:none;
