@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
   def show
   end
 
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     end
   end
-
 
   private
 

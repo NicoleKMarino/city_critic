@@ -25,24 +25,23 @@ class SessionsController < ApplicationController
     end
   end
 
+  def process_local_user
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
+    else
+      flash.now[:danger] = "Login information incorrect."
+      render :new
+    end
+  end
 
-def process_local_user
-  if @user && @user.authenticate(params[:session][:password])
+  def process_facebook_user
     session[:user_id] = @user.id
     redirect_to user_path(@user.id)
-  else
-    flash.now[:danger] = "Login information incorrect."
-    render :new
   end
-end
 
-def process_facebook_user
-  session[:user_id] = @user.id
-  redirect_to user_path(@user.id)
-end
-
-def authorize_user
-  params[:commit] ? process_local_user : process_facebook_user
-end
+  def authorize_user
+    params[:commit] ? process_local_user : process_facebook_user
+  end
 
 end

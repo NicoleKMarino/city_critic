@@ -18,7 +18,6 @@ class User < ApplicationRecord
     end
   end
 
-
   def date_registered
     created_at.strftime("%m/%d/%Y")
   end
