@@ -14,11 +14,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment_hash = comment_params
-    comment_hash[:user_id] = current_user.id
-    comment_hash[:city_id] = @city.id
-    comment_hash[:stars] = comment_params[:stars].to_i
-    @comment = Comment.create(comment_hash)
+    comment_inputs = {:city_id => @city.id}
+    @comment = current_user.comments.new(comment_params.merge(comment_inputs))
     if @comment.save
       redirect_to city_path(@city.name)
     else
