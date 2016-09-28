@@ -9,7 +9,7 @@ class YelpService
       token_secret: ENV["token_secret"]
       })
     end
-    
+
     def get_resturaunts(city)
       params = { term: 'food',
         limit: 10}
