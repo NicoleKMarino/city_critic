@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require five-star-rating/js/dist/rating.min.js
-//= require jquery.raty
-//= require ratyrate
 //= require_tree .
+
+//= require rating.min.js

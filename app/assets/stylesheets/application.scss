@@ -16,7 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'five-star-rating/css/rating.min.css';
+@import 'rating.min';
 
 .c-rating.read-only li.c-rating__item{
   pointer-events:none;
@@ -41,22 +41,23 @@
 }
 
 p{
-  font-family: "Tahoma", Geneva, sans-serif;
+  font-family: Geneva,Tahoma,Verdana,sans-serif;
 }
 
 h2{
-  font-family: "Tahoma", Geneva, sans-serif;
+  font-family: Geneva,Tahoma,Verdana,sans-serif;
 }
 h4{
-  font-family: "Tahoma", Geneva, sans-serif;
+  font-family: Geneva,Tahoma,Verdana,sans-serif;
 }
 
 
 h3{
-  font-family: "Tahoma", Geneva, sans-serif;
+  font-family: Geneva,Tahoma,Verdana,sans-serif;
 }
 
 body {
+  font-family: Geneva,Tahoma,Verdana,sans-serif;
   background: url("https://hd.unsplash.com/photo-1467521335787-2f0fc0f0e9a0") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -98,6 +99,10 @@ body {
   margin-left: 10px;
 }
 
+.resturaunt-well{
+  margin-right: 30%;
+}
+
 a {
   color: #6a0027;
 }
@@ -121,10 +126,10 @@ h3 {
 }
 
 #neighborhoods{
+  margin-top: 100px;
   margin: 0 2.5% 0 2.5%;
   text-align: center;
 }
-
 
 .btn-states {
   background-color: #FFD700;

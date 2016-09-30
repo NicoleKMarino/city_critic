@@ -1,0 +1,23 @@
+{
+  "name": "city_critic",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": "bower cache clean && bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoleKMarino/city_critic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicoleKMarino/city_critic/issues"
+  },
+  "homepage": "https://github.com/NicoleKMarino/city_critic#readme"
+}

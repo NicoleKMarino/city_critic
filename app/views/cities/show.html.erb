@@ -1,11 +1,8 @@
-<div class="header-row text-center">
-  <h3> Top Resturaunts & Neighborhoods in <%=@city.name%></h3>
-</div>
 <div class="city-view container-fluid">
   <div class="row">
-    <div id="neighborhoods" class="thumbnail col-xs-offset-1 text-centered col-xs-3">
+    <div id="neighborhoods" class="thumbnail col-xs-offset-1 text-centered col-xs-3 no-float">
       <h4> Neighborhoods in <%=@city.name%></h4>
-      <br></br>
+      <br>
       <%if @neighborhoods != nil %>
       <% @neighborhoods.each do |neighborhood|%>
       <%if neighborhood.class == Array %>
@@ -18,11 +15,22 @@
       <p> There are no documented neighborshoods for this area</p>
       <%end %>
     </div>
-    <div class="thumbnail col-xs-8 pull-center">
+
+      <div class="col-xs-8 pull-center">
+      <div class="panel-group" id="reviews">
+      <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#reviews" href="#<%=@city.id%>">
+        <h2 class="category-title panel-title">
+          Reviews
+          <span class="collapse-expand glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        </h2>
+      </div>
+      <div id="<%=@city.id%>" class="category-content panel-collapse collapse in">
+      <div class="panel-body">
       <%if current_user.nil? %>
-      <%= link_to "Login to Critique #{@city.name}", login_path, class: 'btn btn-lg btn-cities pull-right' %>
+      <%= link_to "Login to Critique #{@city.name}", login_path, class: 'btn btn-md btn-cities pull-center' %>
       <%else %>
-      <%= link_to "Critique #{@city.name}", new_comment_path(name: @city.name), class: 'btn btn-lg btn-cities pull-right' %>
+      <%= link_to "Critique #{@city.name}", new_comment_path(name: @city.name), class: 'btn btn-md btn-cities pull-center' %>
       <%end %>
       <h3> Average Review:</h3>
       <%= render partial: 'shared/stars_read_only', locals: {rating: @city.average_review} %>
@@ -42,9 +50,16 @@
       <br>
       <%end %>
       <%end %>
+      </div>
     </div>
+  </div>
+</div>
+<div class="col-xs-12 well resturaunt-well">
+  <div class="text-center">
+  <h3>Top Resturaunts In <%=@city.name%></h3>
+</div>
     <% @resturaunts.each do |resturaunt| %>
-    <div class="thumbnail col-xs-2 resturaunt-list">
+    <div class="col-xs-2 resturaunt-list">
       <img src="<%=resturaunt.image_url %>"></img>
       <h4><%= link_to resturaunt.name, resturaunt.url %></h4>
       <img src="<%=resturaunt.rating_img_url_small%>"></img>
@@ -53,8 +68,8 @@
       <% resturaunt.location.display_address.each do |address|%>
       <%= address %>
       <%end %>
-      <br></br>
     </div>
     <%end %>
   </div>
+</div>
 </div>

@@ -28,7 +28,7 @@ gem 'rentjuicer'
 gem 'faraday', '~>0.9.2'
 gem 'crack'
 gem 'omniauth-facebook'
-
+gem 'execjs'
 
 # gem "omniauth-google-oauth2"
 # See https://github.com/rails/execjs#readme for more supported runtimes
