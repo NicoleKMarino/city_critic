@@ -25,7 +25,7 @@
           <span class="collapse-expand glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
         </h2>
       </div>
-      <div id="<%=@city.id%>" class="category-content panel-collapse collapse in">
+      <div id="<%=@city.id%>" class="review-content panel-collapse collapse in">
       <div class="panel-body">
       <%if current_user.nil? %>
       <%= link_to "Login to Critique #{@city.name}", login_path, class: 'btn btn-md btn-cities pull-center' %>
